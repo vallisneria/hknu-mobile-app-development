@@ -59,3 +59,11 @@ typings/
 
 # next.js build output
 .next
+
+# Visual Studio Code Config file
+.vscode/
+
+# 과제 제출용 파일
+*.hwp
+*.pdf
+*.zip
