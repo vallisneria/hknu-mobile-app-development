@@ -6,8 +6,30 @@ html
     link(rel='stylesheet', href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css", crossorigin="anonymous")
     link(rel='stylesheet', href='/stylesheets/all.min.css', crossorigin='anonymous')
     link(rel='stylesheet', href='/stylesheets/style.css', crossorigin='anonymous')
+
   body
-    block content
+    // 헤더
+    nav.navbar.fixed-top.navbar-expand-md
+      div.container
+        a.navbar-brand(href="/") Loc8r
+        button.navbar-toggler.navbar-toggler-left(type="button", data-toggle="collapse", data-target="#navbarMain")
+          span.navbar-toggler-icon
+        #navbarMain.navbar-collapse.collapse
+          ul.navbar-nav.mr-auto
+            li.nav-item
+              a.nav-link(href="/about") About
+
+    // 메인 컨텐츠
+    div.container
+      block content
+
+    // 푸터
+    footer.container
+      div.row
+        .col-12
+          small &copy; GyeongMuk Lee
+    
+    // 스크립트
     script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', crossorigin='anonymous')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', crossorigin='anonymous')
     script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js', crossorigin='anonymous')
