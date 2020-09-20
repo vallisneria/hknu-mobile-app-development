@@ -8,10 +8,10 @@ module.exports.homelist = (req, res) => {
         sidebar: "Looking for wifi and a seat? Loc8r helps you find places to work when out and about. Perhaps with coffee, cake or a pint? Let Loc8r help you find the place you're looking for.",
         locations: [
             {
-                name: 'Starcups',
-                address: '125 High Street, Reading, RG6 1PS',
+                name: 'Hankyong National University',
+                address: '경기도 안성시 안성2동 중앙로 327',
                 rating: 3,
-                facilities: ['Hot drinks', 'Food', 'Premium wifi'],
+                facilities: ['도서관', '커피', '과제'],
                 distance: '100m'
             },
             {
@@ -36,7 +36,7 @@ module.exports.homelist = (req, res) => {
 module.exports.locationInfo = (req, res) => {
     res.render('location-info',
         {
-            title: 'Starcups',
+            title: 'Hankyong National University',
             pageHeader: {
                 title: 'Loc8r',
             },
@@ -45,11 +45,11 @@ module.exports.locationInfo = (req, res) => {
                 callToAction: 'If you\'ve been and you like it - or if you don\'t - please leave a review to help other people just like you.'
             },
             location: {
-                name: 'Starcups',
-                address: '125 High Street, Reading, RG6 1PS',
+                name: 'Hankyong National University',
+                address: '경기도 안성시 안성2동 중앙로 327',
                 rating: 3,
-                facilities: ['Hot drinks', 'Food', 'Premium wifi'],
-                coords: { lat: 51.455041, lng: -0.9690884 },
+                facilities: ['도서관', '커피', '과제'],
+                coords: { lat: 37.011635, lng: 127.264237 },
                 openingTimes: [
                     {
                         days: 'Monday - Friday',
