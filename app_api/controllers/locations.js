@@ -5,7 +5,7 @@ module.exports.locationsListByDistance = async function (req, res) {
     const lng = parseFloat(req.query.lng);
     const lat = parseFloat(req.query.lat);
     const near = { type: "Point", coordinates: [lng, lat] };
-    const geoOptions = { distanceField: "distance.calculated", spherical: true, maxDistance: 20000, $limit: 10 };
+    const geoOptions = { distanceField: "distance.calculated", spherical: true, maxDistance: 200000, $limit: 10 };
 
     if (!lng || !lat) { return res.status(404).json({ message: "lng and lat query parameters are required" }) }
 
