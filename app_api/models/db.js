@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const dbURI = `mongodb+srv://my_altas_user:rwMx6W1L3wjdHf4e@cluster0.p9sgd.mongodb.net/loc8r`;
+const dbURI = `mongodb+srv://my_altas_user:${process.env.ALTAS_PASSWD}@cluster0.p9sgd.mongodb.net/loc8r`;
 mongoose.connect(dbURI, { useNewUrlParser: true });
 
 // 데이터베이스 연결
