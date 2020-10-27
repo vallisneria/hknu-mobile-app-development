@@ -50,9 +50,10 @@ module.exports.locationInfo = (req, res) => {
     }
 
     request(request_option, (error, response, body) => {
-        body.coords = { lng: body.coords[0], lat: body.coords[1] };
-        res.render('location-info',
-            {
+        if (response.statusCode === 200) {
+            body.coords = { lng: body.coords[0], lat: body.coords[1] };
+
+            res.render('location-info', {
                 title: body.name,
                 pageHeader: {
                     title: body.name,
@@ -62,8 +63,19 @@ module.exports.locationInfo = (req, res) => {
                     callToAction: 'If you\'ve been and you like it - or if you don\'t - please leave a review to help other people just like you.'
                 },
                 location: body
+            });
+        } else {
+            let title, content;
+            if (response.statusCode === 404) {
+                title = '404, page not found';
+                content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+            } else {
+                title = `${response.statusCode}, Something's gone wrong.`
+                content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
             }
-        );
+            res.status(response.statusCode);
+            res.render('generic-text', { title, content });
+        }
     })
 
 };
