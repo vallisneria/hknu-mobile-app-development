@@ -98,15 +98,19 @@ module.exports.doAddReview = (req, res) => {
         json: postdata
     };
 
-    request(requestOption, (err, { statusCode }, body) => {
-        if (statusCode === 201) {
-            res.redirect(`/location/${locationid}`);
-        } else if (statusCode === 400) {
-            res.redirect(`/location/${locationid}/review/new?err=val`);
-        } else {
-            showError(req, res, statusCode);
-        }
-    })
+    if (!postdata.author || !postdata.rating || !postdata.reviewText) {
+        res.redirect(`/location/${locationid}/review/new?err=val`);
+    } else {
+        request(requestOption, (err, { statusCode }, body) => {
+            if (statusCode === 201) {
+                res.redirect(`/location/${locationid}`);
+            } else if (statusCode === 400) {
+                res.redirect(`/location/${locationid}/review/new?err=val`);
+            } else {
+                showError(req, res, statusCode);
+            }
+        })
+    }
 }
 
 function renderReviewForm(req, res) {
