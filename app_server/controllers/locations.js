@@ -1,4 +1,4 @@
-const { response } = require("express");
+const { post } = require("request");
 const request = require("request");
 const api_option = { server: 'http://localhost:3000' };
 if (process.env.NODE_ENV === 'production') { api_option.server = 'https://loc8r-2018250038.herokuapp.com'; }
@@ -81,14 +81,75 @@ module.exports.locationInfo = (req, res) => {
 };
 
 module.exports.addReview = (req, res) => {
+    renderReviewForm(req, res);
+};
+
+module.exports.doAddReview = (req, res) => {
+    const locationid = req.params.locationid;
+    const path = `/api/locations/${locationid}/reviews`;
+    const postdata = {
+        author: req.body.name,
+        rating: parseInt(req.body.rating, 10),
+        reviewText: req.body.review
+    };
+    const requestOption = {
+        url: api_option.server + path,
+        method: "POST",
+        json: postdata
+    };
+
+    request(requestOption, (err, { statusCode }, body) => {
+        if (statusCode === 201) {
+            res.redirect(`/location/${locationid}`);
+        } else {
+            showError(req, res, statusCode);
+        }
+    })
+}
+
+function renderReviewForm(req, res) {
     res.render('location-review-form',
         {
             title: 'Review Starcups on Loc8r',
             pageHeader: { title: 'Review Starcups' }
         }
     );
-};
+}
 
+function getLocationInfo(req, res, callback) {
+    const path = `/api/locations/${req.params.locationid}`;
+    const requestOption = {
+        url: api_option.server + path,
+        method: 'GET',
+        json: {}
+    }
+
+    request(requestOption, (err, { statusCode }, body) => {
+        let data = body;
+        if (statusCode === 200) {
+            data.coords = {
+                lng: body.coords[0],
+                lat: body.coords[1]
+            };
+            callback(req, res, data);
+        } else {
+            showError(req, res, statusCode);
+        }
+    })
+}
+
+function showError(req, res, status) {
+    let title, content;
+    if (status === 404) {
+        title = '404, page not found';
+        content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    } else {
+        title = `${status}, Something's gone wrong.`
+        content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    }
+    res.status(status);
+    res.render('generic-text', { title, content });
+}
 
 function formatDistance(distance) {
     let thisdistance = 0;
