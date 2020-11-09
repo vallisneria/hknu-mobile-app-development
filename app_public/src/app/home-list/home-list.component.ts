@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Loc8rDataService } from "../loc8r-data.service";
 
 export class Location {
-  _id: string;
+  id: string;
   name: string;
   distance: number;
   address: string;
