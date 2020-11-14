@@ -8,18 +8,18 @@
 ## 강위범위 및 내용
 |주차|강의범위 및 내용|
 |--|--|
-|제 1주|강의 개요/ Introducing full-stack development & 툴 설치 
-|제 2주|	Designing a MEAN stack architecture 
-|제 3주|	Creating and setting up a MEAN project 
-|제 4주|	Building a static site with Node and Express 
-|제 5주|	Building a data model with MongoDB and Mongoose 
-|제 6주|	Writing a REST API - Expressing the MongDB database to the application 
-|제 7주|	Consuming a REST API - Using an API from inside Express 
-|제 8주|	중간고사 
-|제 9주|	Creating an Angular application with TypeScript 
-|제 10주| 	Building a single-page application with Angular - Foundations 
-|제 11주| 	Building an SPA with Angular - The next level 
-|제 12주| 	Authenticating users, managing sessions, and securing APIs 
-|제 13주| 	Using an authentication API in Angular applications [1] 
-|제 14주| 	Using an authentication API in Angular applications [2] 
-|제 15주| 	기말고사 
+|제 1주|강의 개요/ Introducing full-stack development & 툴 설치|
+|제 2주|Designing a MEAN stack architecture|
+|제 3주|Creating and setting up a MEAN project|
+|제 4주|Building a static site with Node and Express|
+|제 5주|Building a data model with MongoDB and Mongoose|
+|제 6주|Writing a REST API - Expressing the MongDB database to the application|
+|제 7주|Consuming a REST API - Using an API from inside Express|
+|제 8주|중간고사|
+|제 9주|Creating an Angular application with TypeScript|
+|제 10주|Building a single-page application with Angular - Foundations|
+|제 11주|Building an SPA with Angular - The next level|
+|제 12주|Authenticating users, managing sessions, and securing APIs|
+|제 13주|Using an authentication API in Angular applications [1]|
+|제 14주|Using an authentication API in Angular applications [2]|
+|제 15주|기말고사|
