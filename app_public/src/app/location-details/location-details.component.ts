@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Location } from '../home-list/home-list.component';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-location-details',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./location-details.component.css']
 })
 export class LocationDetailsComponent implements OnInit {
+
+  @Input() location: Location;
+
+  public googleAPIKey: string = ''
 
   constructor() { }
 

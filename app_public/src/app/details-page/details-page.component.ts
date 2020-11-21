@@ -21,6 +21,7 @@ export class DetailsPageComponent implements OnInit {
       let id = params.get('locationId');
       return this.loc8rDataService.getLocationById(id)
     })).subscribe((newLocation: Location) => {
+      this.newLocation = newLocation;
       this.pageContent.header.title = newLocation.name;
       this.pageContent.sidebar = `${newLocation.name} is on loc8r because it has accessible wifi \
       and space to sit down with your laptop and get some work done.\n\nIf you've been and you \
