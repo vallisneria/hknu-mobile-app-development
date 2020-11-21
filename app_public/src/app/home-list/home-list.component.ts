@@ -16,7 +16,6 @@ export class Location {
   templateUrl: './home-list.component.html',
   styleUrls: ['./home-list.component.css']
 })
-
 export class HomeListComponent implements OnInit {
   constructor(private loc8rDataService: Loc8rDataService,
     private geolocationService: GeolocationService) { }

@@ -22,4 +22,9 @@ export class Loc8rDataService {
     console.error('Something has gone wrong', error);
     return Promise.reject(error.message || error);
   }
+
+  public getLocationById(locationId: string): Promise<Location> {
+    const url: string = `${this.api_base_url}/locations/${locationId}`;
+    return this.http.get(url).toPromise().then(response => response as Location).catch(this.handleError);
+  }
 }
