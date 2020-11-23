@@ -9,7 +9,7 @@ import { Location, Review } from "./location";
 export class Loc8rDataService {
   constructor(private http: HttpClient) { }
 
-  private api_base_url = "http://localhost:3000/api"
+  private api_base_url = "https://loc8r-2018250038.herokuapp.com/api"
 
   private handleError(error: any): Promise<any> {
     console.error('Something has gone wrong', error);
