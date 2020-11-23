@@ -10,7 +10,15 @@ export class LocationDetailsComponent implements OnInit {
 
   @Input() location: Location;
 
+  public newReview = {
+    author: '',
+    rating: 5,
+    reviewText: ''
+  }
+
   public googleAPIKey: string = ''
+
+  public formVisible: boolean = false;
 
   constructor() { }
 
