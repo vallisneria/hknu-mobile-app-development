@@ -1,1 +1,1 @@
-web: ng build --prod --output-path build; npm start
+web: npm start
