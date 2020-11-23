@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "nodemon"
+    "test": "nodemon",
+    "build": "npx ng build --prod --output-path build",
+    "heroku-postbuild": "npm run build"
   },
   "engines": {
     "node": ">=12.0.0",
@@ -20,5 +22,9 @@
     "nodemon": "^2.0.4",
     "pug": "2.0.0-beta11",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "@angular/cli": "^11.0.2",
+    "@types/angular": "^1.8.0"
   }
 }
