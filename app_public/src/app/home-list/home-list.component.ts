@@ -4,6 +4,7 @@ import { GeolocationService } from "../geolocation.service";
 
 export class Location {
   id: string;
+  _id: string;
   name: string;
   distance: number;
   address: string;
