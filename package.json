@@ -22,5 +22,8 @@
     "nodemon": "^2.0.4",
     "pug": "2.0.0-beta11",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "@types/angular": "^1.8.0"
   }
 }
