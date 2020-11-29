@@ -44,3 +44,4 @@ function gracefulShutdonw(msg, callback) {
 }
 
 require('./locations');
+require('./users')
