@@ -16,6 +16,7 @@ import { DetailsPageComponent } from './details-page/details-page.component';
 import { RatingStarsComponent } from './rating-stars/rating-stars.component';
 import { MostRecentFirstPipe } from './most-recent-first.pipe';
 import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { RegisterComponent } from './register/register.component';
     RatingStarsComponent,
     MostRecentFirstPipe,
     RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
