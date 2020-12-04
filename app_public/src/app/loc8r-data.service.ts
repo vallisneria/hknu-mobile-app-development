@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Location, Review } from "./location";
+import { User } from './user';
+import { AuthResponse } from './authersponse';
 
 
 @Injectable({
@@ -31,5 +33,18 @@ export class Loc8rDataService {
   public addReviewByLocationId(locationId: string, formData: Review): Promise<Review> {
     const url: string = `${this.api_base_url}/locations/${locationId}/reviews`;
     return this.http.post(url, formData).toPromise().then(response => response as any).catch(this.handleError);
+  }
+
+  public login(user: User): Promise<AuthResponse> {
+    return this.makeAuthApiCall('login', user);
+  }
+
+  public register(user: User): Promise<AuthResponse> {
+    return this.makeAuthApiCall('register', user);
+  }
+
+  private makeAuthApiCall(urlPath: string, user: User): Promise<AuthResponse> {
+    const url: string = `${this.api_base_url}/${urlPath}`;
+    return this.http.post(url, user).toPromise().then(response => response as AuthResponse).catch(this.handleError);
   }
 }
