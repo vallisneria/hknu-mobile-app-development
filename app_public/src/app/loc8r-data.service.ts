@@ -15,7 +15,7 @@ export class Loc8rDataService {
     @Inject(BROWSER_STORAGE) private storage: Storage
   ) { }
 
-  private api_base_url = "http://localhost:3000/api"
+  private api_base_url = "http://loc8r-2018250038.herokuapp.com/api"
 
   private handleError(error: any): Promise<any> {
     console.error('Something has gone wrong', error);
